@@ -1,0 +1,103 @@
+/* 1. GLOBAL STYLES */
+html {
+    scroll-behavior: smooth; /* Makes clicking nav links smooth */
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: white;
+    line-height: 1.6;
+}
+
+/* 2. HEADER & PROFILE */
+header { 
+    text-align: center; 
+    padding: 60px 20px; 
+    background: linear-gradient(to bottom, #222, #1a1a1a);
+}
+.tagline em {
+    color: #007bff;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+.profile {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    background: #252525;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* 3. STICKY NAVIGATION */
+.catalog-menu {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background: rgba(26, 26, 26, 0.95);
+    padding: 20px;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+    backdrop-filter: blur(5px);
+}
+.catalog-menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+.catalog-menu a:hover {
+    color: #007bff;
+}
+
+/* 4. THE GRID SYSTEM (Fixes Overlapping) */
+.photo-group {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    scroll-margin-top: 80px; /* Prevents header from covering titles */
+}
+.photo-group h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* 5. IMAGE INTERACTION & UNIFORM SIZE */
+.grid a {
+    display: block;
+    width: 100%;
+    height: 350px; /* Fixed height for all images */
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #333; /* Placeholder color while loading */
+}
+.grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This keeps them from squishing */
+    object-position: center;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    display: block;
+    background-color: #333; /* Fallback background */
+}
+.grid a:hover img {
+    transform: scale(1.1); /* Zoom effect */
+    filter: brightness(1.1);
+}
+
+footer { 
+    text-align: center; 
+    padding: 60px; 
+    color: #666; 
+}
